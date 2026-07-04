@@ -1,0 +1,52 @@
+---
+title: "Class 6 Introduction to R"
+output: html_document
+date: "2026-07-04"
+---
+
+# Reference the packages that you are going to use 
+
+```{r setup}
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(readxl)
+library(haven)
+```
+
+
+## import a csv file
+
+```{r}
+litters_df = read_csv("data_import_examples/data_import_examples/FAS_litters.csv")
+```
+
+## import an excel file
+
+```{r}
+read_excel("data_import_examples/data_import_examples/mlb11.xlsx",
+           sheet = "mlb11"
+           )
+```
+
+
+
+## view the dataset
+
+-  head/tail see the first few or last few rows of the data 
+-  view() see the dataset *make sure you don't knit that since it can mess up r-markdown
+
+```{r}
+head(litters_df)
+tail(litters_df, 2)
+```
+
+## janitor clean name 
+
+clean up names into snake_case
+```{r}
+litters_df = janitor::clean_names(litters_df)
+head(litters_df)
+```
+
+

@@ -4,7 +4,383 @@ output: html_document
 date: "2026-07-04"
 ---
 
-# Reference the packages that you are going to use 
+# 1. Introduction to R and R studio 
+
+## Introduction to R studio 
+
+Windows (Console, terminal)
+Different r files (Rscript vs. Rmarkdown)
+How to run your data 
+
+Insert a code chunk in r markdown 
+
+
+
+# 2. Basic Structure of R Code
+
+## Comments
+
+Anything after `#` is ignored by R.
+
+```{r}
+# This is a comment
+
+2 + 2
+```
+
+---
+
+## Running Code
+
+```{r}
+5 + 7
+
+10 * 3
+
+25 / 5
+```
+
+---
+
+## Case Sensitivity
+
+R is case sensitive.
+
+```{r}
+age <- 25
+
+Age <- 30
+
+age
+
+Age
+```
+
+Notice these are two different variables.
+
+---
+
+# 3. Naming Variables
+
+## Assignment
+
+The preferred assignment operator is `<-`.
+
+```{r}
+age <- 25
+
+height <- 170
+
+name <- "Alice"
+```
+
+You may also see:
+
+```{r}
+weight = 60
+```
+
+Although this works, using `<-` is considered best practice.
+
+---
+
+## Valid Variable Names
+
+```{r}
+patient_age <- 45
+
+patientAge <- 45
+
+age2 <- 20
+```
+
+snake_case naming format is preferred 
+- all lowercase 
+- connect with underline
+
+```{r}
+patient_age <- 35
+
+blood_pressure <- 120
+```
+
+
+---
+
+## Invalid Variable Names
+
+These examples will produce errors.
+
+```{r}
+2age <- 20
+
+patient age <- 20
+
+TRUE <- 1
+```
+
+
+---
+
+# 4. Common Symbols in R
+
+## Assignment
+
+```{r}
+x <- 5
+```
+
+---
+
+## Arithmetic Operators
+
+| Symbol | Meaning |
+|--------|---------|
+| + | Addition |
+| - | Subtraction |
+| * | Multiplication |
+| / | Division |
+| ^ | Exponent |
+
+Example:
+
+```{r}
+5 + 3
+
+10 - 2
+
+4 * 5
+
+20 / 4
+
+2^3
+```
+
+---
+
+## Comparison Operators
+
+| Symbol | Meaning |
+|--------|---------|
+| == | Equal to |
+| != | Not equal to |
+| > | Greater than |
+| < | Less than |
+| >= | Greater than or equal |
+| <= | Less than or equal |
+
+```{r}
+age <- 25
+
+age > 18
+
+age == 25
+
+age != 30
+```
+
+**Important**
+
+=     assigns a value
+
+==    compares two values'
+
+---
+
+## Logical Operators
+
+| Symbol | Meaning |
+|--------|---------|
+| & | AND |
+| \| | OR |
+| ! | NOT |
+
+```{r}
+age <- 25
+
+height <- 170
+
+age > 18 & height > 160
+
+age > 30 | height > 160
+
+!TRUE
+```
+
+---
+
+## Parentheses
+
+Used for:
+
+- Functions
+- Order of operations
+
+```{r}
+(2 + 3) * 4
+
+mean(c(1,2,3,4))
+```
+
+---
+
+## Square Brackets
+
+Used to select elements.
+
+```{r}
+x <- c(10,20,30,40)
+
+x[1]
+
+x[2]
+
+x[c(1,3)]
+```
+
+---
+
+# 5. Basic Data Types
+
+## Numeric
+
+```{r}
+age <- 25
+```
+
+---
+
+## Character
+
+```{r}
+name <- "Alice"
+```
+
+Always put character in quotes
+
+---
+
+## Logical
+
+```{r}
+passed <- TRUE
+```
+
+
+True, false
+---
+
+## Vector
+
+```{r}
+scores <- c(85,90,78,92)
+```
+
+---
+
+## Check the Data Type
+
+```{r}
+class(age)
+
+class(name)
+
+class(scores)
+
+class(passed)
+```
+
+---
+
+# 6. Useful Functions
+
+```{r}
+scores <- c(85,90,78,92)
+
+length(scores)
+
+sum(scores)
+
+mean(scores)
+
+max(scores)
+
+min(scores)
+```
+
+
+---
+
+# 7. Common Errors
+
+## Missing Quotation Mark/ Parenthesis
+
+
+```{r}
+name <- "Alice
+
+
+```
+
+
+```{r}
+mean(scores
+```
+
+---
+
+## Using = Instead of ==
+
+```{r}
+age = 18
+
+age == 18
+```
+
+---
+
+# Practice Exercise
+
+Create the following variables.
+
+```{r}
+name <- "John" 
+
+age <- 30
+
+height <- 175
+
+weight <- 70
+```
+
+
+Answer these questions:
+
+1. What is the class of `name`?
+2. Is age greater than 18?
+3. What is the average score?
+4. What is the BMI?
+
+
+
+```{r}
+class(name)
+age > 18
+scores <- c(88,91,79,95)
+
+mean(scores)
+```
+
+
+
+# 8. Install R packages
+
+```{r}
+install.packages("ggplot2")
+```
+
+
+# 9. Reference the packages that you are going to use 
 
 ```{r setup}
 library(dplyr)
@@ -15,38 +391,93 @@ library(haven)
 ```
 
 
+# Data Import
+
 ## import a csv file
 
 ```{r}
-litters_df = read_csv("data_import_examples/data_import_examples/FAS_litters.csv")
+geo_ds = read_csv("C:/Users/Admin/Documents/Vaccine Hesistancy Research/vaccine_nyc/Main_Routine_Vaccine_Geo.csv")
+demo_ds = read_csv("C:/Users/Admin/Documents/Vaccine Hesistancy Research/vaccine_nyc/Main_Routine_Vaccine_Demo.csv")
 ```
-
-## import an excel file
-
-```{r}
-read_excel("data_import_examples/data_import_examples/mlb11.xlsx",
-           sheet = "mlb11"
-           )
-```
-
 
 
 ## view the dataset
 
 -  head/tail see the first few or last few rows of the data 
--  view() see the dataset *make sure you don't knit that since it can mess up r-markdown
+-  view() allow you to view the whole dataset *make sure you don't knit that since it can mess up r-markdown
 
 ```{r}
-head(litters_df)
-tail(litters_df, 2)
+head(demo_ds)
+tail(demo_ds, 2)
 ```
+
+```{r}
+summary(demo_ds)
+```
+
 
 ## janitor clean name 
 
 clean up names into snake_case
 ```{r}
-litters_df = janitor::clean_names(litters_df)
-head(litters_df)
+demo_ds = janitor::clean_names(demo_ds)
+head(demo_ds)
 ```
+
+
+
+# Assignment 
+
+## Create a git repository 
+
+Create a github account
+Create a repository on github 
+
+Create a project and choose git for the repository 
+
+Version Control --> Git --> copy the repository url 
+
+Create a rmarkdown file, and use the commit tab to save your progress. 
+
+Push your assignment to the repository once completed. 
+
+!!! Please submit your assignment this week by sharing your git repository link with me!!!
+
+
+## Install the following packages
+
+ggplot2, dplyr, tidyverse, readxl, haven
+
+
+
+## Import the dataset 
+
+Download both datasets from Github 
+Import the dataset to your work environment 
+
+
+```{r}
+
+```
+
+# Change the name of your dataset into snake_case 
+
+```{r}
+
+```
+
+
+# Explore your data and answer the following questions 
+
+1. How many line of data are there? 
+
+2. List out all the name of the variables within the dataset. Provide me with a short description regarding what each variable. 
+
+- What is the class of the variable?
+- Is there any variable missing?
+- If this is a categorical variable, please describe what are the categories?
+- If this is a numerical variable, tell me what is the mean, what is the median, minimum and maximum?
+
+
 
 

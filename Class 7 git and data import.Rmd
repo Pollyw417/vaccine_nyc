@@ -1,0 +1,52 @@
+---
+title: "Class 7 Git and Data Import"
+output: html_document
+date: "2026-07-12"
+---
+
+# Assignment
+
+Create a repository on github 
+
+Create a project and choose git for the repository 
+
+Version Control --> Git --> copy the repository url 
+
+Create a rmarkdown file, and use the commit tab to save your progress. 
+
+Push your assignment to the repository once completed. 
+
+!!! Please submit your assignment this week by sharing your git repository link with me!!!
+
+
+## Import the dataset 
+
+Download both datasets from Github 
+Import the dataset to your work environment 
+
+
+```{r}
+
+```
+
+# Change the name of your dataset into snake_case 
+
+```{r}
+
+```
+
+
+# Explore your data and answer the following questions 
+
+1. How many line of data are there? 
+
+2. List out all the name of the variables within the dataset. Provide me with a short description regarding what each variable. 
+
+- What is the class of the variable?
+- Is there any variable missing?
+- If this is a categorical variable, please describe what are the categories?
+- If this is a numerical variable, tell me what is the mean, what is the median, minimum and maximum?
+
+
+
+

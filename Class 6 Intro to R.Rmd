@@ -14,6 +14,10 @@ How to run your data
 
 Insert a code chunk in r markdown 
 
+```{r}
+
+```
+
 
 
 # 2. Basic Structure of R Code
@@ -24,6 +28,8 @@ Anything after `#` is ignored by R.
 
 ```{r}
 # This is a comment
+
+# Getting the output for the calculation 2+2 
 
 2 + 2
 ```
@@ -54,6 +60,10 @@ Age <- 30
 age
 
 Age
+
+age <- 15
+
+age
 ```
 
 Notice these are two different variables.
@@ -78,6 +88,7 @@ You may also see:
 
 ```{r}
 weight = 60
+
 ```
 
 Although this works, using `<-` is considered best practice.
@@ -264,10 +275,10 @@ Always put character in quotes
 
 ```{r}
 passed <- TRUE
+
+notpass <- FALSE
 ```
 
-
-True, false
 ---
 
 ## Vector
@@ -279,6 +290,8 @@ scores <- c(85,90,78,92)
 ---
 
 ## Check the Data Type
+
+class(variable_of_interest)
 
 ```{r}
 class(age)
@@ -319,12 +332,11 @@ min(scores)
 ```{r}
 name <- "Alice
 
-
 ```
 
 
 ```{r}
-mean(scores
+mean(((((scores))))
 ```
 
 ---
@@ -351,6 +363,8 @@ age <- 30
 height <- 175
 
 weight <- 70
+
+scores <- c(85,90,78,92)
 ```
 
 
@@ -361,6 +375,17 @@ Answer these questions:
 3. What is the average score?
 4. What is the BMI?
 
+```{r}
+class_of_name <- class(name)
+print(class_of_name)
+
+age>18
+
+mean(scores)
+
+BMI <- weight /((height/100)^2)
+print(BMI)
+```
 
 
 ```{r}
@@ -428,56 +453,18 @@ head(demo_ds)
 
 # Assignment 
 
-## Create a git repository 
+## Installation of Git 
 
 Create a github account
-Create a repository on github 
-
-Create a project and choose git for the repository 
-
-Version Control --> Git --> copy the repository url 
-
-Create a rmarkdown file, and use the commit tab to save your progress. 
-
-Push your assignment to the repository once completed. 
-
-!!! Please submit your assignment this week by sharing your git repository link with me!!!
 
 
-## Install the following packages
+https://happygitwithr.com/
+
+Follow the guideline on this website to learn about what is Git and have get Installed on your computer. Read and complete step 1 to 9 
+
+
+## Install the following packages in R
 
 ggplot2, dplyr, tidyverse, readxl, haven
-
-
-
-## Import the dataset 
-
-Download both datasets from Github 
-Import the dataset to your work environment 
-
-
-```{r}
-
-```
-
-# Change the name of your dataset into snake_case 
-
-```{r}
-
-```
-
-
-# Explore your data and answer the following questions 
-
-1. How many line of data are there? 
-
-2. List out all the name of the variables within the dataset. Provide me with a short description regarding what each variable. 
-
-- What is the class of the variable?
-- Is there any variable missing?
-- If this is a categorical variable, please describe what are the categories?
-- If this is a numerical variable, tell me what is the mean, what is the median, minimum and maximum?
-
-
 
 
